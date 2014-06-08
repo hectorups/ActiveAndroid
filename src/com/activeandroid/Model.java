@@ -63,6 +63,10 @@ public abstract class Model {
 		return mId;
 	}
 
+    public final void setId(Long id){
+        mId = id;
+    }
+
 	public final void delete() {
 		Cache.openDatabase().delete(mTableInfo.getTableName(), idName+"=?", new String[] { getId().toString() });
 		Cache.removeEntity(this);
